@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Template • TodoMVC</title>
+
 		<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
 		<!-- CSS overrides - remove if you don't need it -->
 		<link rel="stylesheet" href="css/app.css">
@@ -44,13 +45,13 @@
 				<!-- Remove this if you don't implement routing -->
 				<ul class="filters">
 					<li>
-						<a ng-class="{selected:$location.path() == '/'}" href="#/">All</a>
+						<a ng-class="{selected:selector.completed == undefined}" href="#/">All</a>
 					</li>
 					<li>
-						<a ng-class="{selected:$location.path() == '/active'}" href="#/active">Active</a>
+						<a ng-class="{selected:selector.completed == false}" href="#/active">Active</a>
 					</li>
 					<li>
-						<a ng-class="{selected:$location.path() == '/completed'}" href="#/completed">Completed</a>
+						<a ng-class="{selected:selector.completed == true}" href="#/completed">Completed</a>
 					</li>
 				</ul>
 				<!-- Hidden if no completed items are left ↓ -->
